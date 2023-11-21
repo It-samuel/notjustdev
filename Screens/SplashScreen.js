@@ -2,7 +2,10 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import { colors } from '../Colors/colors'
 
-export default function SplashScreen() {
+export default function SplashScreen({navigation}) {
+    setTimeout(() =>{
+        navigation.replace('Login')
+    }, 4000)
   return (
     <View style={styles.container}>
       <Image source={require('../Image/logo.png') }

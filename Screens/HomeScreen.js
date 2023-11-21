@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ScrollView,
 import React, { useRef, useState } from 'react'
 import { colors } from '../Colors/colors'
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
     
 
   return (
@@ -13,7 +13,7 @@ export default function HomeScreen() {
     <View style={{flex:1, backgroundColor:colors.primBG, }}>
      <View style={styles.header}>
      <Image source={require('../Image/pexels-luis-quintero-2774556.jpg') }
-        style={{height: 180, width: '100%', 
+        style={{height: 180, width: '100%', marginTop:-20,
         resizeMode: 'cover', }} />
 
         <Image source={require('../Image/logo.png') }

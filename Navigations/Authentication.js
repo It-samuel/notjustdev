@@ -2,6 +2,9 @@ import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import BottomTab from './BottomTabs';
 import HomeScreen from '../Screens/HomeScreen';
+import SplashScreen from '../Screens/SplashScreen';
+import Login from '../Screens/Login';
+import SignUp from '../Screens/SignUp';
 
 
 
@@ -12,15 +15,34 @@ export default function Authentication(){
     return(
         <Auth.Navigator>
             <Auth.Screen 
-            name ="BottomTab"
-            component={BottomTab}
-            options={{headerShown: false}}
-            />
-            <Auth.Screen 
-            name ="HomeScreen"
-            component={HomeScreen}
-            options={{headerShown: false}}
-            />
+                    name="SplashScreen"
+                    component={SplashScreen}
+                    options={{
+                        headerShown: false
+                    }}
+                />
+                
+                <Auth.Screen 
+                    name="Login"
+                    component={Login}
+                    options={{
+                        headerShown: false
+                    }}
+                />
+                <Auth.Screen 
+                    name="SignUp"
+                    component={SignUp}
+                    options={{
+                        headerShown: false
+                    }}
+                />
+                <Auth.Screen 
+                    name="BottomTabs"
+                    component={BottomTab}
+                    options={{
+                        headerShown: false
+                    }}
+                />
         </Auth.Navigator>
     )
 }
