@@ -1,9 +1,15 @@
-import { StyleSheet, Text, View, Image, TextInput } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ScrollView,} from 'react-native'
+import React, { useRef, useState } from 'react'
 import { colors } from '../Colors/colors'
 
 export default function HomeScreen() {
+    
+
   return (
+    <ScrollView 
+    
+      stickyHeaderIndices={[5]}
+    >
     <View style={{flex:1, backgroundColor:colors.primBG, }}>
      <View style={styles.header}>
      <Image source={require('../Image/pexels-luis-quintero-2774556.jpg') }
@@ -28,8 +34,34 @@ export default function HomeScreen() {
         </View>
         </View>
         <View style={styles.community}>
-            <View style={{borderBottomWidth:1}}>
+            <View style={{borderBottomWidth:1, flexDirection:'row', justifyContent:'space-between',marginHorizontal:15}}>
                 <Text style={{fontWeight:'bold', fontSize:15,padding:15}}>Popular Communities</Text>
+                <TouchableOpacity style={{backgroundColor:colors.primColor, height:30,alignSelf:'center',padding:5,borderRadius:10}}>
+                    <Text style={{color:'white', fontWeight:'bold'}}>See All</Text>
+                </TouchableOpacity>
+
+            </View>
+
+        </View>
+
+        <View style={styles.community}>
+            <View style={{borderBottomWidth:1, flexDirection:'row', justifyContent:'space-between',marginHorizontal:15}}>
+                <Text style={{fontWeight:'bold', fontSize:15,padding:15}}>Upcoming Events</Text>
+                <TouchableOpacity style={{backgroundColor:colors.primColor, height:30,alignSelf:'center',padding:5,borderRadius:10}}>
+                    <Text style={{color:'white', fontWeight:'bold'}}>See All</Text>
+                </TouchableOpacity>
+
+            </View>
+
+        </View>
+
+        <View style={styles.community}>
+            <View style={{borderBottomWidth:1, flexDirection:'row', justifyContent:'space-between',marginHorizontal:15}}>
+                <Text style={{fontWeight:'bold', fontSize:15,padding:15}}>Volunteer</Text>
+                <TouchableOpacity style={{backgroundColor:colors.primColor, height:30,alignSelf:'center',padding:5,borderRadius:10}}>
+                    <Text style={{color:'white', fontWeight:'bold'}}>See All</Text>
+                </TouchableOpacity>
+
             </View>
 
         </View>
@@ -37,6 +69,7 @@ export default function HomeScreen() {
      
         
     </View>
+    </ScrollView>
   )
 }
 
