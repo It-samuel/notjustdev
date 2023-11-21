@@ -65,6 +65,17 @@ export default function HomeScreen() {
             </View>
 
         </View>
+
+        <View style={styles.community}>
+            <View style={{borderBottomWidth:1, flexDirection:'row', justifyContent:'space-between',marginHorizontal:15}}>
+                <Text style={{fontWeight:'bold', fontSize:15,padding:15}}>Shop Items</Text>
+                <TouchableOpacity style={{backgroundColor:colors.primColor, height:30,alignSelf:'center',padding:5,borderRadius:10}}>
+                    <Text style={{color:'white', fontWeight:'bold'}}>See All</Text>
+                </TouchableOpacity>
+
+            </View>
+
+        </View>
         </View>
      
         
