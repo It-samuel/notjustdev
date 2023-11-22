@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,FlatList, Dimensions } from 'react-native'
+import { StyleSheet, Text, View,FlatList, Dimensions,TouchableOpacity,Image } from 'react-native'
 import React from 'react'
 import { colors } from '../Colors/colors'
 import { jobsdata } from '../Data/Data'
@@ -32,8 +32,28 @@ export default function Events() {
                     )}
                 />
             </View>
+            <View style={styles.floatingBtn}>
+              <TouchableOpacity style={{alignSelf:'center', justifyContent:'center'}}>
+              <Image source={require('../Image/plus.png') }
+                style={{height: 40, width: 30, alignSelf:'center',marginTop:20,tintColor:colors.primColor,
+                resizeMode: 'contain', }} />
+              </TouchableOpacity>
+
+            </View>
     </View>
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  floatingBtn:{
+    position:'absolute',
+    bottom:10,
+    right:15,
+    backgroundColor:'white',
+    elevation:10,
+    width:80,
+    height:80,
+    borderRadius:30,
+    alignItems:'center'
+}
+})

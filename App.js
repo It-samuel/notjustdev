@@ -8,7 +8,7 @@ import RootNav from './Navigations/RootNav';
 export default function App() {
   return (
     <View style={styles.container}>
-      <RootNav />
+      <RootNav /> 
       <StatusBar style="auto" />
     </View>
   );
