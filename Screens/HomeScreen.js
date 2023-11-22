@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ScrollView,} from 'react-native'
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ScrollView, FlatList, Dimensions} from 'react-native'
 import React, { useRef, useState } from 'react'
 import { colors } from '../Colors/colors'
 import { jobsdata } from '../Data/Data'
 import JobsCard from './JobsCard'
 
 export default function HomeScreen({navigation}) {
-    
+    const SCREEN_WIDTH = Dimensions.get('window').width
 
   return (
     <ScrollView 
@@ -43,6 +43,30 @@ export default function HomeScreen({navigation}) {
                 </TouchableOpacity>
 
             </View>
+            <View>
+                <FlatList 
+                    style={{marginTop:10, marginBottom:10, flexWrap:'wrap'}}
+                    horizontal ={true}
+                    showsHorizontalScrollIndicator ={false}
+                    data={jobsdata}
+                    keyExtractor={(item, index)=>index.toString}
+                    renderItem={({item})=>(
+                        <View style={{marginRight:5}}>
+                            <JobsCard
+                                screenwidth={SCREEN_WIDTH*0.85}
+                                jobTitle = {item.jobTitle}
+                                jobDescription={item.jobDescription}
+                                experience={item.experience}
+                                skills={item.skills}
+                                clock={item.clock}
+                                showsHorizontalScrollIndicator ={false}
+                                
+                                
+                            />
+                        </View>
+                    )}
+                />
+            </View>
 
         </View>
 
@@ -54,10 +78,10 @@ export default function HomeScreen({navigation}) {
                 </TouchableOpacity>
 
             </View>
-            <Text>kujhihdi</Text>
+            
             <View>
                 <FlatList 
-                    style={{marginTop:10, marginBottom:10}}
+                    style={{marginTop:10, marginBottom:10, flexWrap:'wrap'}}
                     horizontal ={true}
                     showsHorizontalScrollIndicator ={false}
                     data={jobsdata}
@@ -90,6 +114,30 @@ export default function HomeScreen({navigation}) {
                 </TouchableOpacity>
 
             </View>
+            <View>
+                <FlatList 
+                    style={{marginTop:10, marginBottom:10, flexWrap:'wrap'}}
+                    horizontal ={true}
+                    showsHorizontalScrollIndicator ={false}
+                    data={jobsdata}
+                    keyExtractor={(item, index)=>index.toString}
+                    renderItem={({item})=>(
+                        <View style={{marginRight:5}}>
+                            <JobsCard
+                                screenwidth={SCREEN_WIDTH*0.85}
+                                jobTitle = {item.jobTitle}
+                                jobDescription={item.jobDescription}
+                                experience={item.experience}
+                                skills={item.skills}
+                                clock={item.clock}
+                                showsHorizontalScrollIndicator ={false}
+                                
+                                
+                            />
+                        </View>
+                    )}
+                />
+            </View>
 
         </View>
 
@@ -100,6 +148,30 @@ export default function HomeScreen({navigation}) {
                     <Text style={{color:'white', fontWeight:'bold'}}>See All</Text>
                 </TouchableOpacity>
 
+            </View>
+            <View>
+                <FlatList 
+                    style={{marginTop:10, marginBottom:10, flexWrap:'wrap'}}
+                    horizontal ={true}
+                    showsHorizontalScrollIndicator ={false}
+                    data={jobsdata}
+                    keyExtractor={(item, index)=>index.toString}
+                    renderItem={({item})=>(
+                        <View style={{marginRight:5}}>
+                            <JobsCard
+                                screenwidth={SCREEN_WIDTH*0.85}
+                                jobTitle = {item.jobTitle}
+                                jobDescription={item.jobDescription}
+                                experience={item.experience}
+                                skills={item.skills}
+                                clock={item.clock}
+                                showsHorizontalScrollIndicator ={false}
+                                
+                                
+                            />
+                        </View>
+                    )}
+                />
             </View>
 
         </View>
@@ -142,7 +214,7 @@ const styles = StyleSheet.create({
     },
     community:{
         backgroundColor:'white',
-        height:250,
+        height:300,
         marginTop:8
     }
 })
