@@ -74,7 +74,7 @@ return (
         <TouchableOpacity onPress={() => {}}>
           <View style={styles.menuItem}>
             <Icon name="heart-outline" color={colors.primColor} size={25}/>
-            <Text style={styles.menuItemText}>Your Favorite Courses</Text>
+            <Text style={styles.menuItemText}>Your Favorites</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {}}>

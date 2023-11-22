@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ScrollView,} from 'react-native'
 import React, { useRef, useState } from 'react'
 import { colors } from '../Colors/colors'
+import { jobsdata } from '../Data/Data'
+import JobsCard from './JobsCard'
 
 export default function HomeScreen({navigation}) {
     
@@ -36,7 +38,7 @@ export default function HomeScreen({navigation}) {
         <View style={styles.community}>
             <View style={{borderBottomWidth:1, flexDirection:'row', justifyContent:'space-between',marginHorizontal:15}}>
                 <Text style={{fontWeight:'bold', fontSize:15,padding:15}}>Popular Communities</Text>
-                <TouchableOpacity style={{backgroundColor:colors.primColor, height:30,alignSelf:'center',padding:5,borderRadius:10}}>
+                <TouchableOpacity style={{backgroundColor:colors.primColor, height:30,alignSelf:'center',padding:5,borderRadius:10}} onPress={() => navigation.navigate('Communities')}>
                     <Text style={{color:'white', fontWeight:'bold'}}>See All</Text>
                 </TouchableOpacity>
 
@@ -47,10 +49,35 @@ export default function HomeScreen({navigation}) {
         <View style={styles.community}>
             <View style={{borderBottomWidth:1, flexDirection:'row', justifyContent:'space-between',marginHorizontal:15}}>
                 <Text style={{fontWeight:'bold', fontSize:15,padding:15}}>Upcoming Events</Text>
-                <TouchableOpacity style={{backgroundColor:colors.primColor, height:30,alignSelf:'center',padding:5,borderRadius:10}}>
+                <TouchableOpacity style={{backgroundColor:colors.primColor, height:30,alignSelf:'center',padding:5,borderRadius:10}} onPress={() => navigation.navigate('Events')}>
                     <Text style={{color:'white', fontWeight:'bold'}}>See All</Text>
                 </TouchableOpacity>
 
+            </View>
+            <Text>kujhihdi</Text>
+            <View>
+                <FlatList 
+                    style={{marginTop:10, marginBottom:10}}
+                    horizontal ={true}
+                    showsHorizontalScrollIndicator ={false}
+                    data={jobsdata}
+                    keyExtractor={(item, index)=>index.toString}
+                    renderItem={({item})=>(
+                        <View style={{marginRight:5}}>
+                            <JobsCard
+                                screenwidth={SCREEN_WIDTH*0.85}
+                                jobTitle = {item.jobTitle}
+                                jobDescription={item.jobDescription}
+                                experience={item.experience}
+                                skills={item.skills}
+                                clock={item.clock}
+                                showsHorizontalScrollIndicator ={false}
+                                
+                                
+                            />
+                        </View>
+                    )}
+                />
             </View>
 
         </View>
@@ -58,7 +85,7 @@ export default function HomeScreen({navigation}) {
         <View style={styles.community}>
             <View style={{borderBottomWidth:1, flexDirection:'row', justifyContent:'space-between',marginHorizontal:15}}>
                 <Text style={{fontWeight:'bold', fontSize:15,padding:15}}>Volunteer</Text>
-                <TouchableOpacity style={{backgroundColor:colors.primColor, height:30,alignSelf:'center',padding:5,borderRadius:10}}>
+                <TouchableOpacity style={{backgroundColor:colors.primColor, height:30,alignSelf:'center',padding:5,borderRadius:10}} onPress={() => navigation.navigate('Volunteer')}>
                     <Text style={{color:'white', fontWeight:'bold'}}>See All</Text>
                 </TouchableOpacity>
 
@@ -69,7 +96,7 @@ export default function HomeScreen({navigation}) {
         <View style={styles.community}>
             <View style={{borderBottomWidth:1, flexDirection:'row', justifyContent:'space-between',marginHorizontal:15}}>
                 <Text style={{fontWeight:'bold', fontSize:15,padding:15}}>Shop Items</Text>
-                <TouchableOpacity style={{backgroundColor:colors.primColor, height:30,alignSelf:'center',padding:5,borderRadius:10}}>
+                <TouchableOpacity style={{backgroundColor:colors.primColor, height:30,alignSelf:'center',padding:5,borderRadius:10}} onPress={() => navigation.navigate('Shop')}>
                     <Text style={{color:'white', fontWeight:'bold'}}>See All</Text>
                 </TouchableOpacity>
 

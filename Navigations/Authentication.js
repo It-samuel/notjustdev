@@ -6,6 +6,10 @@ import SplashScreen from '../Screens/SplashScreen';
 import Login from '../Screens/Login';
 import SignUp from '../Screens/SignUp';
 import EditProfile from '../Screens/EditProfile';
+import Events from '../Screens/Events';
+import Communities from '../Screens/Communities';
+import Volunteer from '../Screens/Volunteer';
+import Shop from '../Screens/Shop';
 
 
 
@@ -45,11 +49,43 @@ export default function Authentication(){
                     }}
                 />
 
-<Auth.Screen 
+                <Auth.Screen 
                     name="EditProfile"
                     component={EditProfile}
                     options={{
                         headerShown: false
+                    }}
+                />
+
+<Auth.Screen 
+                    name="Events"
+                    component={Events}
+                    options={{
+                        headerShown: true
+                    }}
+                />
+
+<Auth.Screen 
+                    name="Communities"
+                    component={Communities}
+                    options={{
+                        headerShown: true
+                    }}
+                />
+
+<Auth.Screen 
+                    name="Volunteer"
+                    component={Volunteer}
+                    options={{
+                        headerShown: true
+                    }}
+                />
+
+<Auth.Screen 
+                    name="Shop"
+                    component={Shop}
+                    options={{
+                        headerShown: true
                     }}
                 />
         </Auth.Navigator>
