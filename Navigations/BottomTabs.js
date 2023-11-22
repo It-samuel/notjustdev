@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View, Text, Image } from 'react-native'
 import React from 'react'
 import HomeScreen from "../Screens/HomeScreen";
+import { colors } from "../Colors/colors";
 
 
 const BottomTab = createBottomTabNavigator();
@@ -23,7 +24,7 @@ export default function BottomTabs() {
                                 <Image
                                 source={require('../Image/home.png')}
                                 style={{width:30, height:30, }}
-                                tintColor={colors.primary}
+                                tintColor={colors.primColor}
                                 resizeMode='contain'
                                 />
                             </View>
