@@ -28,7 +28,7 @@ export default function HomeScreen({navigation}) {
             </View>
             <View style={styles.search}>
                 <Image source={require('../Image/find.png') }
-                style={{height: 40, width: 30, 
+                style={{height: 40, width: 30,
                 resizeMode: 'contain', }} />
                 </View>
         </View>

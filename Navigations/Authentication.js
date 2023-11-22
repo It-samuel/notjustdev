@@ -5,6 +5,7 @@ import HomeScreen from '../Screens/HomeScreen';
 import SplashScreen from '../Screens/SplashScreen';
 import Login from '../Screens/Login';
 import SignUp from '../Screens/SignUp';
+import EditProfile from '../Screens/EditProfile';
 
 
 
@@ -39,6 +40,14 @@ export default function Authentication(){
                 <Auth.Screen 
                     name="BottomTabs"
                     component={BottomTab}
+                    options={{
+                        headerShown: false
+                    }}
+                />
+
+<Auth.Screen 
+                    name="EditProfile"
+                    component={EditProfile}
                     options={{
                         headerShown: false
                     }}
